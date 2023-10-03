@@ -1,0 +1,86 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+#define TRUE 1
+#define FALSE 0
+#define MAX 50
+
+void push(char);
+void pop();
+void checkbalanced(char *, int); 
+
+char ptr[20];
+int top=-1;
+
+int main(){
+	int len;
+	//char expr[]="[A+(B+C)/(D-E)-{F+G]]";
+	//char expr[]="(A+(B+C)/(D-E)-(F+G))";
+	char expr[]="{A+(B+C)/(D-E)-(F+G))";
+	
+	printf("Input Expression: %s\n",expr);
+	len=strlen(expr);
+	
+    checkbalanced(expr,len);        //function call
+    	
+	return 0;
+}
+
+void checkbalanced(char *expr, int len){
+	int count1=0, count2=0, count3=0;                      // count1 for '( or )' and count2 for "{ or }" and count3 for "[ or ]" 
+	for(int i=0;i<len;i++){
+		if(expr[i]=='(')
+		{
+			push(expr[i]);
+			count1++;
+		}
+		else if(expr[i]=='{')
+		{
+			push(expr[i]);
+			count2++;
+		}
+		else if(expr[i]=='[')
+		{
+			push(expr[i]);
+			count3++;
+		}
+		else if(expr[i]==')')
+		{
+		    push(expr[i]);
+		    count1--;
+		}
+		else if(expr[i]== '}')
+		{
+		    push(expr[i]);
+		    count2--;
+		}
+		else if(expr[i]== ']')
+		{
+		    push(expr[i]);
+		    count3--;
+		}
+	}
+		
+	if(count1==0 && count2==0 && count3==0)
+		{
+			printf("The expression is Balanced\n");
+		}
+	else
+		{
+			printf("The expression is Not Balanced\n");
+		}
+		pop();
+}
+
+void push(char item){
+	ptr[++top]=item;
+	
+}
+
+void pop(){
+    while(top!=-1){
+        top--;
+    }
+}
+
