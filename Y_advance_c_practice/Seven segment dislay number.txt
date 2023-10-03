@@ -1,0 +1,64 @@
+/******************************************************************************
+
+Author: Atul Gaikwad
+Date: 01/04/2023
+Program Name: C program to display integer number into seven segment number display.
+
+*******************************************************************************/
+
+#include<stdio.h>
+void print_first(int,char []);
+void print_second(int,char []);
+void print_third(int,char []);
+char d[10][7]={	'_','|',' ','|','|','_','|',//0
+			' ',' ',' ','|',' ',' ','|',//1
+			'_',' ','_','|','|','_',' ',//2
+			'_',' ','_','|',' ','_','|',//3
+			' ','|','_','|',' ',' ','|',//4
+			'_','|','_',' ',' ','_','|',//5
+			'_','|','_',' ','|','_','|',//6
+			'_',' ',' ','|',' ',' ','|',//7
+			'_','|','_','|','|','_','|',//8
+			'_','|','_','|',' ','_','|'};//9
+			
+char first_layer[10];
+char second_layer[30];
+char third_layer[30];
+
+int main(){
+	char n[10],i=0;
+	printf("enter a number:");
+	scanf("%[^\n]s",n);
+
+	
+	while(n[i]!='\0'){
+		i++;
+	}
+
+	print_first(i,n);
+	printf("\n");
+	print_second(i,n);
+	printf("\n");
+	print_third(i,n);
+	printf("\n");
+	return 0;
+}
+
+void print_first(int a,char b[]){
+	for(int j=0;j<a;j++)
+		printf(" %c ",d[b[j]-48][0]);	
+}
+
+void print_second(int c,char b[]){
+	for(int j=0;j<c;j++){
+		for(int k=1;k<=3;k++)
+			printf("%c",d[b[j]-48][k]);
+	}
+}
+
+void print_third(int c,char b[]){
+	for(int j=0;j<c;j++){
+		for(int k=1;k<=3;k++)
+			printf("%c",d[b[j]-48][k+3]);
+	}
+}

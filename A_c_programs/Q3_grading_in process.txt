@@ -1,0 +1,64 @@
+#include<stdio.h>
+int main()
+{
+    int total_marks=800;
+    double percentage;
+	int sub,obtained_mark,n1,n2,n3,n4,n5,n6,n7,n8;
+	printf("Welcome grading system !!\n Please Enter how many subject you have:");
+	scanf("%d", &sub)
+	
+	for(sub=1; )
+	printf("1. Marathi:");
+	scanf("%d",&n1);
+	printf("2. English:");
+	scanf("%d",&n2);
+	printf("3. Science:");
+	scanf("%d",&n3);
+	printf("4. Mathematics:");
+	scanf("%d",&n4);
+	printf("5. Hindi:");
+	scanf("%d",&n5);
+	printf("6. Computer Science:");
+	scanf("%d",&n6);
+	printf("7. History:");
+	scanf("%d",&n7);
+	printf("8. Geography:");
+	scanf("%d",&n8);
+	
+	obtained_mark=
+	printf("Enter a number:");
+	scanf("%d",&mark);
+	if(mark>95&&mark<=100)
+	{
+		printf("O Grade");
+	}
+	else if(mark>90&&mark<=95)
+	{
+		printf("A grade");
+	}
+	else if(mark>80&&mark<91)
+	{
+		printf("B Grade");
+	}
+	else if(mark>70&&mark<81)
+	{
+		printf("C Grade");
+	}
+	else if(mark>60&&mark<71)
+	{
+		printf("D Grade");
+	}
+	else if(mark>49&&mark<61)
+	{
+		printf("E Grade");
+	}
+	else if(mark>=0&&mark<50)
+	{
+		printf("F Grade");
+	}
+	else
+	{
+		printf("Invalid Mark");
+	}
+	return 0;
+}

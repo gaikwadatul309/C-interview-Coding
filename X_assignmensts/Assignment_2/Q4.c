@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+	int gcd, n1,n2,i,j;
+	printf("Enter two number to findout the GCD and LCM:");
+	scanf("%d", &n1);
+	scanf("%d", &n2);
+		if(n1>n2){
+			i=n1;
+			}
+		else{ i=n2;}
+		while(1)
+		{
+			if((i%n1==0)&&(i%n2==0))
+			{
+				printf("LCM of%d and %d is=%d\n", n1,n2,i);
+				break;
+			}
+			i++;
+		}
+		for(j=1;j<=n1&&j<=n2;j++)
+		{
+			if(n1%j==0 && n2%j==0){
+				gcd=j;}
+		}
+		printf("GCD is %d\n",gcd);
+}
+

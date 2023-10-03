@@ -1,0 +1,170 @@
+/*
+ 	Author:Gaikwad Atul J.
+	Title : Selection and Bubble Sort
+
+*/
+
+#include<stdio.h>
+void bubble_sort(int[],int);
+void select_sort(int[],int);
+void main()
+{
+	int a[30],n,i,iChoice;
+	clrscr();
+	printf("\nEnter no. of elements : ");
+	scanf("%d",&n);
+	printf("\nEnter Array Elements : \n\t");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("\n\t----------MENU----------");
+	printf("\n\t1.Selection Sort");
+	printf("\n\t2.Bubble Sort");
+	printf("\n\t3.Exit");
+	printf("\n\n\tEnter your Choice : ");
+	scanf("%d",&iChoice);
+	switch(iChoice)
+	{
+		case 1:
+			select_sort(a,n);
+			printf("\n\tSorted Array is :");
+			for(i=0;i<n;i++)
+			{
+				printf("\t%d",a[i]);
+			}
+			break;
+		case 2:
+			bubble_sort(a,n);
+			printf("\n\tSorted Array is :");
+			for(i=0;i<n;i++)
+			{
+				printf("\t%d",a[i]);
+			}
+			break;
+		case 3:
+			exit();
+		default :
+			printf("\n\tInvalid Choice");
+	}
+	getch();
+}
+
+void select_sort(int a[],int n)
+{
+	int i,j,iTemp;
+	for(i=0;i<n-1;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(a[i]>a[j])
+			{
+				iTemp=a[i];
+				a[i]=a[j];
+				a[j]=iTemp;
+			}
+		}
+	}
+}
+
+void bubble_sort(int a[],int n)
+{
+	int i,j,iTemp;
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-i-1;j++)
+		{
+			if(a[j]>a[j+1])
+			{
+				iTemp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=iTemp;
+			}
+		 }
+	}
+}
+
+
+
+
+
+   Output :
+
+
+
+Enter no. of elements : 4
+
+Enter Array Elements :
+        30
+        10
+        40
+        20
+
+        ----------MENU----------
+        1.Selection Sort
+        2.Bubble Sort
+        3.Exit
+
+        Enter your Choice : 1
+
+        Sorted Array is :       10      20      30      40
+
+
+
+
+Enter no. of elements : 4
+
+Enter Array Elements :
+        23
+        68
+        12
+        53
+
+        ----------MENU----------
+        1.Selection Sort
+        2.Bubble Sort
+        3.Exit
+
+        Enter your Choice : 2
+
+        Sorted Array is :       12      23      53      68
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
